@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel = "stylesheet" href = "styles.css">
+  <title>Tenzo Best</title>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
+      <div class="brand brand-logo" aria-label="Логотип"></div>
+      <div class="brand" style="gap:10px;">
+        <span>Tenzo Shop</span>
+      </div>
+      <nav>
+        <a href="#" id="nav-catalog">Каталог</a>
+        <a href="#" id="nav-about">О нас</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section id="catalog" class="active">
+      <h2 class="section-title revealer" id="catalog-title" style="display:block;">Каталог</h2>
+      <div class="grid" id="grid">
+      </div>
+    </section>
+    <section id="about" class="revealer" style="display:none;">
+      <h2 class="section-title" id="about-title" style="margin-top:0;">О нас</h2>
+
+
+
+
+
+
+
+      <div class="about-wrap" style="margin-top:6px;">
+        <p>Добро пожаловать в наш аниме-магазин. Мы предлагаем качественные товары в стиле аниме: одежда, плакаты, аксессуары и т. д. Наша миссия — предоставить фанатам удобный доступ к интересным предметам с хорошим соотношением цены и качества. Оформление заказа осуществляется через Telegram-бота.</p>
+        <p>Как оформить заказ: нажмите кнопку "Оформить заказ" на карточке товара — вы перейдёте к Telegram-боту, который поможет оформить покупку и связаться с менеджером.</p>
+        <p>Контакты: <a href="https://t.me/YourBot" target="_blank" rel="noopener" style="color:#c0308e;">https://t.me/Shoularry</a></p>
+        <ul>
+          <li>Гибкая система доставки</li>
+          <li>Описание материалов и размерной сетки на карточках</li>
+        </ul>
+      </div>
+    </section>
+    <section id="train-collage" class="revealer" style="display:block; margin-top:20px;">
+      <h3 class="section-title" style="font-size:22px; margin-bottom:8px;">гаддемская темка</h3>
+      <div class="collage" aria-label="Коллаж поездов">
+        <img src="https://avatars.yandex.net/get-music-content/4399644/c9be115f.a.13488372-1/m1000x1000" alt=" train 1" />
+        <img src="https://i.pinimg.com/originals/a8/46/4d/a8464d6415d139e994f287f8236cca60.jpg" alt=" train 2" />
+        <img src="https://i.ytimg.com/vi/5dtiaBcJmzU/maxresdefault.jpg" alt=" train 3" />
+        <img src="https://yt3.googleusercontent.com/ytc/AIdro_lqIZ4Vglr81WerwNn_lo0yZ-WM9bBulayCPT3ApvqQJ0A=s900-c-k-c0x00ffffff-no-rj" alt=" train 4" />
+        <img src="https://i.pinimg.com/736x/64/0c/44/640c447a210d2bbf3fe799eb8301ee54.jpg" alt=" train 5" />
+        <img src="https://i.pinimg.com/originals/a0/90/5e/a0905e3007b4150354bd366280b15043.jpg" alt=" train 6" />
+      </div>
+    </section>
+  </main>
+  <audio id="background-music" loop src="https://rus.hitmotop.com/get/music/20200630/Xavier_Wulf_-_Morning_Dew_feat_BONES_70099240.mp3"></audio>
+
+
+
+  <script>
+    
+    const items = [
+      { name: "Фигурка Резе 194145", price: 1321, img: "https://ir-3.ozone.ru/s3/multimedia-1-w/wc1000/8165387264.jpg" },
+      { name: "Футболка Резе 142365", price: 1097, img: "https://rst-basket-cdn-02bl.geobasket.ru/vol6162/part616282/616282520/images/big/1.webp" },
+      { name: "Фигурка Денджи 145276", price: 1449, img: "https://ir-3.ozone.ru/s3/multimedia-2/wc1000/6591328958.jpg" },
+      { name: "Футболка Денджи 136241", price: 1099, img: "https://rst-basket-cdn-02bl.geobasket.ru/vol6162/part616282/616282528/images/big/1.webp" },
+      { name: " Костюм косплея Пауэр Человека-Бензопилы 111000", price: 5421, img: "https://rst-basket-cdn-02bl.geobasket.ru/vol7689/part768970/768970380/images/big/1.webp" },
+      { name: "Манга Человек Бензопила Chainsaw Man 1 том 100100", price: 549, img: "https://rst-basket-cdn-03bl.geobasket.ru/vol4796/part479650/479650197/images/big/1.webp" },
+      { name: "Парик аниме розовый Человек-бензопила Пауэр 100898", price: 900, img: "https://rst-basket-cdn-03bl.geobasket.ru/vol5482/part548296/548296493/images/big/1.webp" },
+      { name: "Человек-бензопила 7. Кн. 12: Птица и война. Тацуки  109099", price: 1499, img: "https://rst-basket-cdn-04bl.geobasket.ru/vol1656/part165613/165613570/images/big/1.webp" },
+      { name: "Фигурка Кукла-мобиль Человек-бензопила Почита/ Chainsaw Man Denji Pochita(7см) 178009", price: 299, img: "https://ir-3.ozone.ru/s3/multimedia-1-4/wc1000/7352248828.jpg" },
+      { name: "Фигурки акриловые Человек Бензопила вся семейка 124123", price: 534, img: "https://rst-basket-cdn-04bl.geobasket.ru/vol6088/part608889/608889402/images/big/1.webp" }
+    ];
+    const grid = document.getElementById('grid');
+    const botLink = "https://t.me/tenzo_shop_bot"; 
+    items.forEach((it, idx) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.style.animationDelay = (idx * 60) + 'ms';
+      card.innerHTML = `
+        <img class="card-img" src="${it.img}" alt="${it.name}">
+        <h3>${it.name.replace(/(\d+)$/, "<br>ID: $1")}</h3>
+        <div class="price">${it.price.toLocaleString()} ₽</div>
+        <a class="btn" href="${botLink}" target="_blank" rel="noopener" aria-label="Оформить заказ">Оформить заказ</a>
+      `;
+      grid.appendChild(card);
+    });
+    document.getElementById('nav-catalog').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('catalog').style.display = 'block';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('catalog-title').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    document.getElementById('nav-about').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('catalog').style.display = 'none';
+      document.getElementById('about').style.display = 'block';
+      document.getElementById('about-title').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    const revealElements = document.querySelectorAll('.revealer');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+     const music = document.getElementById('background-music');
+  document.body.addEventListener('click', () => {
+    if (music.paused) {
+      music.play().then(() => {
+        music.volume = 0.1;
+      }).catch((e) => {
+        console.log('Не удалось запустить музыку:', e);
+      });
+    }
+  });
+  </script>
+
+</head>
+<div id="splash">
+  <h1>Tenzo Best</h1>
+  <img src="https://media1.tenor.com/m/5D0tWwmcIcwAAAAC/sewerslvt-breakdance.gif" alt="Мрачный символ" />
+</div>
+<script>
+  setTimeout(() => {
+    document.getElementById('splash').classList.add('hidden');
+  }, 3000);
+</script>
+</body>
+</html>
